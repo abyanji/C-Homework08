@@ -2,13 +2,6 @@
 
 Console.Clear();
 
-int DataEntry(string message)
-{
-    System.Console.Write(message);
-    int num = int.Parse(Console.ReadLine());
-    return num;
-}
-
 int[,] CreateRandomArray(int rows, int columns, int leftRange, int rightRange)
 {
     int[,] array = new int[rows, columns];
@@ -41,7 +34,7 @@ void ProductOfMatrices(int[,] arrayOne, int[,] arrayTwo)
     {
         for (int k = 0; k < product.GetLength(0); k++)
         {
-            for (int i = 0; i < arrayOne.GetLength(1); i++)
+            for (int i = 0; i < product.GetLength(1); i++)
             {
                 for (int j = 0; j < arrayTwo.GetLength(0); j++)
                 {
@@ -57,13 +50,10 @@ void ProductOfMatrices(int[,] arrayOne, int[,] arrayTwo)
     }
 }
 
-int rows = DataEntry("Enter the value of rows: ");
-int columns = DataEntry("Enter the value of columns: ");
-int[,] firstMatrix = CreateRandomArray(rows, columns, 1, 5);
-int[,] secondMatrix = CreateRandomArray(rows, columns, 1, 5);
+int[,] firstMatrix = CreateRandomArray(3, 4, 1, 5);
+int[,] secondMatrix = CreateRandomArray(4, 3, 1, 5);
 PrintArray(firstMatrix);
 System.Console.WriteLine();
 PrintArray(secondMatrix);
 System.Console.WriteLine();
 ProductOfMatrices(firstMatrix, secondMatrix);
-//Работает только с одинаковыми по размеру матрицами, как сделать чтобы работало с прямоугольными я не додумал :(
