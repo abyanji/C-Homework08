@@ -6,10 +6,10 @@ int[,] FillArraySpirally(int rows, int columns, int firstNumber)
 {
     int[,] spiralArr = new int[rows, columns];
     spiralArr[0, 0] = firstNumber;
-    int count = 2;
+    int count = 1; 
     int i = 0;
     int j = 0;
-    while (count <= rows * columns)
+    while (count < rows * columns)
     {
         while (j + 1 < spiralArr.GetLength(1) && spiralArr[i, j + 1] == 0)
         {
